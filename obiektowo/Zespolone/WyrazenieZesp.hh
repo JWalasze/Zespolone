@@ -36,8 +36,16 @@ WyrazenieZesp Stworz(LZespolona L1, LZespolona L2, Operator L3);
 
 LZespolona Oblicz(WyrazenieZesp  WyrZ);
 
-bool Wczytaj(LZespolona &L);
+std::istream & operator >> (std::istream &strm, Operator &Op);
 
-bool PorownajZesp(LZespolona Z1, LZespolona Z2);
+std::istream & operator >> (std::istream &strm, WyrazenieZesp &WZ);
+
+std::ostream & operator << (std::ostream &strm, WyrazenieZesp &WZ);
+
+std::ostream & operator << (std::ostream &strm, Operator &Op);
+
+//bool Wczytaj(LZespolona &L);
+
+//bool PorownajZesp(LZespolona Z1, LZespolona Z2);
 
 #endif

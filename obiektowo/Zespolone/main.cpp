@@ -2,7 +2,6 @@
 #include "BazaTestu.hh"
 #include "LZespolona.hh"
 #include "WyrazenieZesp.hh"
-#include "Statystyka.hh"
 
 using namespace std;
 
@@ -11,46 +10,6 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-
-  /*LZespolona L1 = utworz(-2.5,3);
-  //wypisz(L1);
-
-  LZespolona L2 = utworz(3,4);
-  wypisz(L2);
-
-  LZespolona L3 = L1 / L2;
-  wypisz(L3);
-
-  LZespolona L4 = utworz(3,-3);
-  wypisz(L4);
-  LZespolona L5 = sprzezenie(L4);
-  wypisz(L5);
-
-  LZespolona L6 = utworz(3,4);
-  wypisz(L6);
-  double L7 = new_modul(L6);
-  wypiszdouble(L7);
-  //LZespolona L7 = modul(L6);
-  //wypisz(L7);
-  cout << 16 / 4;
-
-  //Wczytaj(L1);
-  LZespolona &A = L1;
-  WyrazenieZesp Z = Stworz(L1, L2, Op_Dziel);
-  Wypisz(Z);
-  LZespolona L = Oblicz(Z);
-  wypisz(L);
-  //PorownajZesp(L1, L2);
-
-  if(Wczytaj(A)==true)
-  {
-  cout << "ok";
-  }
-  else
-  {
-  cout << "nie ok";
-  }*/
-
 
 
 
@@ -79,64 +38,83 @@ if (argc < 2) {
   cout << " Start testu arytmetyki zespolonej: " << argv[1] << endl;
   cout << endl;
 
-  WyrazenieZesp   WyrZ_PytanieTestowe;
+  WyrazenieZesp WyrZ_PytanieTestowe;
+  WyrazenieZesp &WyrZ = WyrZ_PytanieTestowe;
+
+  statystyka Stat = { 0, 0 };
+  statystyka &S = Stat;
 
   while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe)) {
-    /*cout << " Czesc rzeczywista pierwszego argumentu: ";
-    cout << WyrZ_PytanieTestowe.Arg1.re << endl;
-    cout << " Czesc urojona pierwszego argumentu: ";
-    cout << WyrZ_PytanieTestowe.Arg1.im << endl;
-    cout << " Operator wyrazenia ";
-    //cout << WyrZ_PytanieTestowe.Op << endl;
-     switch (WyrZ_PytanieTestowe.Op)
-  {
-  case Op_Dodaj : cout << "  " << '+' << "  "<< endl; break;
-
-  case Op_Odejmij : cout << "  " << '-' << "  "<< endl; break;
-
-  case Op_Mnoz : cout << "  " << '*' << "  "<< endl; break;
-
-  case Op_Dziel : cout << "  " << '/' << "  "<< endl; break;
-  }
-    cout << " Czesc rzeczywista drugiego argumentu: ";
-    cout << WyrZ_PytanieTestowe.Arg2.re << endl;
-    cout << " Czesc urojona drugiego argumentu: ";
-    cout << WyrZ_PytanieTestowe.Arg2.im << endl;*/
 
     cout << "Podaj wynik operacji: ";
     Wypisz(WyrZ_PytanieTestowe);
 
     LZespolona Odpowiedz;
-    //&L = Odpowiedz;
-    cin >> Odpowiedz.re >> Odpowiedz.im;
-    cout << "Twoja odpowiedz: " << '(' << Odpowiedz.re << showpos << Odpowiedz.im << 'i' << noshowpos << ')';
+    LZespolona &L = Odpowiedz;
+    //cin >> Odpowiedz.re >> Odpowiedz.im;
+    //cout << "Twoja odpowiedz: " << '(' << Odpowiedz.re << showpos << Odpowiedz.im << 'i' << noshowpos << ')';
     //Wczytaj(L);
+
+    //Wczytaj(cin, L);
+
+    //if (!cin.good()) // czy strumien niedobry?
+    //cin.clear(); // naprawiamy strumien
+    //if ( cin.fail() )
+    //{ cerr << ”Blad” << endl; }
+    cout << "Twoja odpowiedz: "; //<< L << endl;
+    cin >> L;
+    if ( cin.fail() ) {
+    cerr << "Blad formatu liczby zespolonej. Sprobuj jeszcze raz"; cout << endl << "Zostaly 3 proby" << endl;
+    cin.clear();
+    cin.ignore( 1000, '\n' );
+    cout << "Twoja odpowiedz: ";
+    cin >> L;
+    if ( cin.fail() ) {
+    cerr << "Blad formatu liczby zespolonej. Sprobuj jeszcze raz"; cout << endl << "Zostaly 2 proby" << endl;
+    cin.clear();
+    cin.ignore( 1000, '\n' );
+    cout << "Twoja odpowiedz: ";
+    cin >> L;
+    if ( cin.fail() ) {
+    cerr << "Blad formatu liczby zespolonej. Sprobuj jeszcze raz"; cout << endl << "Zostala 1 proba" << endl;
+    cin.clear();
+    cin.ignore( 1000, '\n' );
+    cout << "Twoja odpowiedz: ";
+    cin >> L;
+    if ( cin.fail() ) {
+    cerr << "Blad formatu liczby zespolonej. Brak prob";
+    cin.clear();
+    cin.ignore( 1000, '\n' );
+    }}}}
 
 
     LZespolona Wynik;
     Wynik = Oblicz(WyrZ_PytanieTestowe);
 
-    if(PorownajZesp(Wynik, Odpowiedz)==false)
+    if(Wynik == Odpowiedz)
     {
+    cout << endl << "Odpowiedz poprawna" << endl;
+    dodaj_dobra(S);
+    }
+    else
+    {
+    cout << endl << "Blad. Prawidlowym wynikiem jest: ";
     wypisz(Wynik);
     }
+
+    dodaj_pyt(S);
 
     cout << endl;
     cout << endl;
   }
 
+  wyswietl_podsumowanie(S);
+
+  cin >> WyrZ;
+  cout << WyrZ;
 
   cout << endl;
   cout << " Koniec testu" << endl;
   cout << endl;
-
-
-
-
-
-
-
-
-
 
 }

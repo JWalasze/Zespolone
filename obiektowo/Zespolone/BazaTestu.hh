@@ -28,4 +28,24 @@ bool InicjalizujTest( BazaTestu  *wskBazaTestu, const char*  sNazwaTestu );
  */
 bool PobierzNastpnePytanie( BazaTestu  *wskBazaTestu,  WyrazenieZesp *wskWyr );
 
+
+
+
+struct statystyka {
+  int liczba_poprawnych;
+  int liczba_pytan;
+};
+
+int zwroc_liczbe_poprawnych(statystyka &S);
+
+int zwroc_procent_dobrych(statystyka &S);
+
+void wyswietl_podsumowanie(statystyka &S);
+
+void inicjuj_podsumowanie(statystyka &S);
+
+void dodaj_dobra(statystyka &S);
+
+void dodaj_pyt(statystyka &S);
+
 #endif

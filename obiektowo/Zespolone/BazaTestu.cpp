@@ -86,6 +86,11 @@ bool InicjalizujTest( BazaTestu  *wskBazaTestu, const char *sNazwaTestu )
    * Analogicznie zrob inicjalizacje dla testu trudne
    */
 
+  if (!strcmp(sNazwaTestu,"trudny")) {
+    UstawTest(wskBazaTestu,TestTrudny,sizeof(TestTrudny)/sizeof(WyrazenieZesp));
+    return true;
+  }
+
   cerr << "Otwarcie testu '" << sNazwaTestu << "' nie powiodlo sie." << endl;
   return false;
 }
@@ -119,3 +124,65 @@ bool PobierzNastpnePytanie( BazaTestu  *wskBazaTestu, WyrazenieZesp *wskWyrazeni
   ++wskBazaTestu->IndeksPytania;
   return true;
 }
+
+
+/*double procent_popr(statystyka l)
+{
+  double Wynik;
+
+  Wynik = l.liczba_poprawnych / l.liczba_pytan;
+  return Wynik;
+}*/
+
+void inicjuj_podsumowanie(statystyka &S)
+{
+ if(S.liczba_poprawnych > S.liczba_pytan)
+ {
+ cout << "Blad. Niepoprawna ilosc pytan" << endl;
+ }
+}
+
+void dodaj_dobra(statystyka &S)
+{
+  S.liczba_poprawnych++;
+}
+
+void dodaj_pyt(statystyka &S)
+{
+  S.liczba_pytan++;
+}
+
+int zwroc_liczbe_poprawnych(statystyka &S)
+{
+ return S.liczba_poprawnych;
+}
+
+int zwroc_procent_dobrych(statystyka &S)
+{
+ return S.liczba_poprawnych * 100 / S.liczba_pytan;
+}
+
+void wyswietl_podsumowanie(statystyka &S)
+{
+ cout << "Ilosc dobrych odpowiedzi: ";
+ cout << zwroc_liczbe_poprawnych(S) << endl;
+ cout << "Ilosc blednych odpowiedzi: " << S.liczba_pytan - zwroc_liczbe_poprawnych(S) << endl;
+ cout << "Wynik procentowy poprawnych odpowiedzi: " << zwroc_procent_dobrych(S) << '%' << endl;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
