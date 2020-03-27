@@ -1,4 +1,5 @@
 #include "LZespolona.hh"
+#include <cassert>
 
 using namespace std;
 
@@ -40,7 +41,7 @@ LZespolona operator * (LZespolona  Skl1,  LZespolona  Skl2)
 LZespolona operator / (LZespolona  Skl1,  LZespolona  Skl2)
 {
   LZespolona Wynik;
-
+  assert(modul(Skl2)!=0);
   Wynik = (Skl1 * sprzezenie(Skl2)) / pow(modul(Skl2), 2);
   return Wynik;
 }
@@ -54,7 +55,7 @@ LZespolona operator / (LZespolona  Skl1,  double Skl2)
   return Wynik;
 }
 
-LZespolona sprzezenie(LZespolona  Skl1)
+LZespolona sprzezenie (LZespolona  Skl1)
 {
   LZespolona  Wynik;
 
@@ -80,14 +81,6 @@ bool operator != (LZespolona L1, LZespolona L2)
   }
     return false;
 }
-/*LZespolona modul(LZespolona  Skl1)
-{
-  LZespolona  Wynik;
-
-  Wynik.re = sqrt(pow(Skl1.re, 2) + pow(Skl1.im, 2));
-  Wynik.im = 0;
-  return Wynik;
-}*/
 
 double modul(LZespolona Skl1)
 {
@@ -96,37 +89,6 @@ double modul(LZespolona Skl1)
   Wynik = sqrt(pow(Skl1.re, 2) + pow(Skl1.im, 2));
   return Wynik;
 }
-
-LZespolona utworz( double a, double b )
-{
-  LZespolona l;
-  l.re = a;
-  l.im = b;
-
-  return l;
-}
-
-void wypisz(LZespolona l)
-{
-   cout << '(' << l.re << showpos << l.im << 'i' << ')' << noshowpos;
-}
-
-/*void wypiszdouble(double l)
-{
-  cout << l << endl;
-}*/
-
-/*bool Wczytaj(std::istream &strm, LZespolona &Skl)
-{
-  char znak;
-  strm>>znak;
-  if (znak != '(') return false;
-  strm>>Skl.re>>Skl.im>>znak;
-  if (znak != 'i') return false;
-  strm>>znak;
-  if (znak != ')') return false;
-  return true;
-}*/
 
 std::istream & operator >> (std::istream &strm, LZespolona &Skl)
 {

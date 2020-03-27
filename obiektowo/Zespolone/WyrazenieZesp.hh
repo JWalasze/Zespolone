@@ -28,24 +28,14 @@ struct WyrazenieZesp {
  *
  */
 
-void Wypisz(WyrazenieZesp WyrZ);
-
-WyrazenieZesp Stworz(LZespolona L1, LZespolona L2, Operator L3);
-
-//void Wyswietl(WyrazenieZesp  WyrZ);
-
 LZespolona Oblicz(WyrazenieZesp  WyrZ);
 
 std::istream & operator >> (std::istream &strm, Operator &Op);
 
 std::istream & operator >> (std::istream &strm, WyrazenieZesp &WZ);
 
-std::ostream & operator << (std::ostream &strm, WyrazenieZesp &WZ);
+std::ostream & operator << (std::ostream &strm, const WyrazenieZesp &WZ);
 
-std::ostream & operator << (std::ostream &strm, Operator &Op);
-
-//bool Wczytaj(LZespolona &L);
-
-//bool PorownajZesp(LZespolona Z1, LZespolona Z2);
+std::ostream & operator << (std::ostream &strm, const Operator &Op);
 
 #endif

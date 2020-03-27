@@ -23,10 +23,6 @@ struct  LZespolona {
  * Dalej powinny pojawic sie zapowiedzi definicji przeciazen operatorow
  */
 
-LZespolona utworz( double a, double b );
-
-void wypisz(LZespolona l);
-
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2);
 
 LZespolona  operator - (LZespolona  Skl1,  LZespolona  Skl2);
@@ -43,13 +39,7 @@ bool operator != (LZespolona L1, LZespolona L2);
 
 LZespolona sprzezenie(LZespolona  Skl1);
 
-//LZespolona modul(LZespolona  Skl1);
-
 double modul(LZespolona Skl1);
-
-//void wypiszdouble(double l);
-
-bool Wczytaj(std::istream &strm, LZespolona &Sk);
 
 std::istream & operator >> (std::istream & strm, LZespolona & Skl);
 

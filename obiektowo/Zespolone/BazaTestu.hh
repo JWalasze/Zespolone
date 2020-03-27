@@ -40,7 +40,9 @@ int zwroc_liczbe_poprawnych(statystyka &S);
 
 int zwroc_procent_dobrych(statystyka &S);
 
-void wyswietl_podsumowanie(statystyka &S);
+int zwroc_liczbe_pytan(statystyka &S);
+
+std::ostream & operator << (std::ostream & strm, statystyka &S);
 
 void inicjuj_podsumowanie(statystyka &S);
 

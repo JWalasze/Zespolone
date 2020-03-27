@@ -13,7 +13,7 @@ static WyrazenieZesp  TestLatwy[] =
   { {{2,1}, Op_Dodaj, {1,2}},
     {{1,0}, Op_Odejmij, {0,1}},
     {{3,0}, Op_Mnoz, {0,3}},
-    {{4,8}, Op_Dziel, {1,0}},
+    {{4,8}, Op_Dziel, {0,0}},
   };
 
 /*
@@ -157,32 +157,20 @@ int zwroc_liczbe_poprawnych(statystyka &S)
  return S.liczba_poprawnych;
 }
 
+int zwroc_liczbe_pytan(statystyka &S)
+{
+  return S.liczba_pytan;
+}
+
 int zwroc_procent_dobrych(statystyka &S)
 {
  return S.liczba_poprawnych * 100 / S.liczba_pytan;
 }
 
-void wyswietl_podsumowanie(statystyka &S)
+std::ostream & operator << (ostream & strm, statystyka &S)
 {
- cout << "Ilosc dobrych odpowiedzi: ";
- cout << zwroc_liczbe_poprawnych(S) << endl;
- cout << "Ilosc blednych odpowiedzi: " << S.liczba_pytan - zwroc_liczbe_poprawnych(S) << endl;
- cout << "Wynik procentowy poprawnych odpowiedzi: " << zwroc_procent_dobrych(S) << '%' << endl;
-
+ strm << "Ilosc dobrych odpowiedzi: " << zwroc_liczbe_poprawnych(S) << endl;
+ strm << "Ilosc blednych odpowiedzi: " << zwroc_liczbe_pytan(S) - zwroc_liczbe_poprawnych(S) << endl;
+ strm << "Wynik procentowy poprawnych odpowiedzi: " << zwroc_procent_dobrych(S) << '%' << endl;
+ return strm;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

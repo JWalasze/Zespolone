@@ -47,21 +47,11 @@ if (argc < 2) {
   while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe)) {
 
     cout << "Podaj wynik operacji: ";
-    Wypisz(WyrZ_PytanieTestowe);
+    cout << WyrZ;
 
     LZespolona Odpowiedz;
     LZespolona &L = Odpowiedz;
-    //cin >> Odpowiedz.re >> Odpowiedz.im;
-    //cout << "Twoja odpowiedz: " << '(' << Odpowiedz.re << showpos << Odpowiedz.im << 'i' << noshowpos << ')';
-    //Wczytaj(L);
-
-    //Wczytaj(cin, L);
-
-    //if (!cin.good()) // czy strumien niedobry?
-    //cin.clear(); // naprawiamy strumien
-    //if ( cin.fail() )
-    //{ cerr << ”Blad” << endl; }
-    cout << "Twoja odpowiedz: "; //<< L << endl;
+    cout << "Twoja odpowiedz: ";
     cin >> L;
     if ( cin.fail() ) {
     cerr << "Blad formatu liczby zespolonej. Sprobuj jeszcze raz"; cout << endl << "Zostaly 3 proby" << endl;
@@ -99,7 +89,7 @@ if (argc < 2) {
     else
     {
     cout << endl << "Blad. Prawidlowym wynikiem jest: ";
-    wypisz(Wynik);
+    cout << Wynik;
     }
 
     dodaj_pyt(S);
@@ -108,10 +98,7 @@ if (argc < 2) {
     cout << endl;
   }
 
-  wyswietl_podsumowanie(S);
-
-  cin >> WyrZ;
-  cout << WyrZ;
+  cout << S;
 
   cout << endl;
   cout << " Koniec testu" << endl;

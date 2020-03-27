@@ -35,16 +35,16 @@
 1584355662 /home/user/Pulpit/obiektowo/Zespolone/Statystyka.hh
 	<iostream>
 
-1584874190 source:/home/user/Zespolone/obiektowo/Zespolone/BazaTestu.cpp
+1584979715 source:/home/user/Zespolone/obiektowo/Zespolone/BazaTestu.cpp
 	<iostream>
 	<cstring>
 	<cassert>
 	"BazaTestu.hh"
 
-1584736441 /home/user/Zespolone/obiektowo/Zespolone/BazaTestu.hh
+1584979811 /home/user/Zespolone/obiektowo/Zespolone/BazaTestu.hh
 	"WyrazenieZesp.hh"
 
-1584874292 /home/user/Zespolone/obiektowo/Zespolone/WyrazenieZesp.hh
+1584975963 /home/user/Zespolone/obiektowo/Zespolone/WyrazenieZesp.hh
 	<iostream>
 	"LZespolona.hh"
 
@@ -52,7 +52,7 @@
 	<iostream>
 	<cmath>
 
-1584873461 source:/home/user/Zespolone/obiektowo/Zespolone/main.cpp
+1584979452 source:/home/user/Zespolone/obiektowo/Zespolone/main.cpp
 	<iostream>
 	"BazaTestu.hh"
 	"LZespolona.hh"
@@ -64,10 +64,41 @@
 1584369637 source:/home/user/Zespolone/obiektowo/Zespolone/Statystyka.cpp
 	"Statystyka.hh"
 
-1584874471 source:/home/user/Zespolone/obiektowo/Zespolone/WyrazenieZesp.cpp
+1584976485 source:/home/user/Zespolone/obiektowo/Zespolone/WyrazenieZesp.cpp
 	"WyrazenieZesp.hh"
 	"LZespolona.hh"
 
-1584795732 source:/home/user/Zespolone/obiektowo/Zespolone/LZespolona.cpp
+1584976462 source:/home/user/Zespolone/obiektowo/Zespolone/LZespolona.cpp
+	"LZespolona.hh"
+
+1585302697 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/BazaTestu.cpp
+	<iostream>
+	<cstring>
+	<cassert>
+	"BazaTestu.hh"
+
+1585260410 /home/user/Pulpit/Zespolone/obiektowo/Zespolone/BazaTestu.hh
+	"WyrazenieZesp.hh"
+
+1585260777 /home/user/Pulpit/Zespolone/obiektowo/Zespolone/WyrazenieZesp.hh
+	<iostream>
+	"LZespolona.hh"
+
+1585260853 /home/user/Pulpit/Zespolone/obiektowo/Zespolone/LZespolona.hh
+	<iostream>
+	<cmath>
+
+1585303518 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/LZespolona.cpp
+	"LZespolona.hh"
+	<cassert>
+
+1585261286 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/main.cpp
+	<iostream>
+	"BazaTestu.hh"
+	"LZespolona.hh"
+	"WyrazenieZesp.hh"
+
+1585303734 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/WyrazenieZesp.cpp
+	"WyrazenieZesp.hh"
 	"LZespolona.hh"
 
