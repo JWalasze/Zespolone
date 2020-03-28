@@ -75,11 +75,11 @@ bool operator == (LZespolona L1, LZespolona L2)
 
 bool operator != (LZespolona L1, LZespolona L2)
 {
-  if(L1.re!=L2.re || L1.im!=L2.im)
+  if(L1 == L2)
   {
-    return true;
+     return false;
   }
-    return false;
+   return true;
 }
 
 double modul(LZespolona Skl1)

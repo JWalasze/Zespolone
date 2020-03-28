@@ -71,13 +71,13 @@
 1584976462 source:/home/user/Zespolone/obiektowo/Zespolone/LZespolona.cpp
 	"LZespolona.hh"
 
-1585302697 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/BazaTestu.cpp
+1585393824 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/BazaTestu.cpp
 	<iostream>
 	<cstring>
 	<cassert>
 	"BazaTestu.hh"
 
-1585260410 /home/user/Pulpit/Zespolone/obiektowo/Zespolone/BazaTestu.hh
+1585393892 /home/user/Pulpit/Zespolone/obiektowo/Zespolone/BazaTestu.hh
 	"WyrazenieZesp.hh"
 
 1585260777 /home/user/Pulpit/Zespolone/obiektowo/Zespolone/WyrazenieZesp.hh
@@ -88,17 +88,25 @@
 	<iostream>
 	<cmath>
 
-1585303518 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/LZespolona.cpp
+1585392772 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/LZespolona.cpp
 	"LZespolona.hh"
 	<cassert>
 
-1585261286 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/main.cpp
+1585393992 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/main.cpp
 	<iostream>
 	"BazaTestu.hh"
 	"LZespolona.hh"
 	"WyrazenieZesp.hh"
+	"Statystyka.hh"
 
 1585303734 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/WyrazenieZesp.cpp
 	"WyrazenieZesp.hh"
 	"LZespolona.hh"
+
+1585394063 source:/home/user/Pulpit/Zespolone/obiektowo/Zespolone/Statystyka.cpp
+	<iostream>
+	"Statystyka.hh"
+
+1585394063 /home/user/Pulpit/Zespolone/obiektowo/Zespolone/Statystyka.hh
+	<iostream>
 

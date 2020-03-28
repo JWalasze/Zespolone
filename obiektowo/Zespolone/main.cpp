@@ -2,6 +2,7 @@
 #include "BazaTestu.hh"
 #include "LZespolona.hh"
 #include "WyrazenieZesp.hh"
+#include "Statystyka.hh"
 
 using namespace std;
 
@@ -98,6 +99,7 @@ if (argc < 2) {
     cout << endl;
   }
 
+  inicjuj_podsumowanie(S);
   cout << S;
 
   cout << endl;

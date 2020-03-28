@@ -38,6 +38,8 @@
 		<Unit filename="BazaTestu.hh" />
 		<Unit filename="LZespolona.cpp" />
 		<Unit filename="LZespolona.hh" />
+		<Unit filename="Statystyka.cpp" />
+		<Unit filename="Statystyka.hh" />
 		<Unit filename="WyrazenieZesp.cpp" />
 		<Unit filename="WyrazenieZesp.hh" />
 		<Unit filename="main.cpp" />
